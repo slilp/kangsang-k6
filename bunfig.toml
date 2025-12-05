@@ -1,0 +1,17 @@
+# Bun Configuration
+# https://bun.sh/docs/runtime/bunfig
+
+[install]
+# Configure package installation
+cache = "~/.bun/install/cache"
+registry = "https://registry.npmjs.org"
+
+[install.lockfile]
+# Save the lockfile to the project directory
+save = true
+print = "yarn"
+
+[test]
+# Test configuration
+preload = []
+coverage = true

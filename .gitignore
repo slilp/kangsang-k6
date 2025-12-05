@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Lock files - Keep only bun.lock (using Bun as package manager)
+# Ignore other package manager lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Results
+results/*.json
+results/*.html
+*.json.gz
+
+# Monitoring Data (Docker volumes)
+monitoring/influxdb/data/
+monitoring/grafana/data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Bun
+.bun/
