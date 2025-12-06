@@ -30,11 +30,11 @@ export const config = environments[currentEnv];
 // Test user credentials (should be replaced with real test accounts)
 export const testUsers = {
   admin: {
-    username: "admin@example.com",
+    email: "admin@example.com",
     password: "Admin@1234",
   },
   user: {
-    username: "user@example.com",
+    email: "user@example.com",
     password: "User@1234",
   },
 };
@@ -42,24 +42,11 @@ export const testUsers = {
 // Common endpoints
 export const endpoints = {
   auth: {
-    login: "/token",
-    logout: "/auth/logout",
-    refresh: "/auth/refresh",
-    register: "/auth/register",
+    login: "/public/login",
+    register: "/public/register",
   },
-  users: {
-    list: "/users",
-    create: "/users",
-    get: (id) => `/users/${id}`,
-    update: (id) => `/users/${id}`,
-    delete: (id) => `/users/${id}`,
-  },
-  products: {
-    list: "/products",
-    create: "/products",
-    get: (id) => `/products/${id}`,
-    update: (id) => `/products/${id}`,
-    delete: (id) => `/products/${id}`,
+  user: {
+    get: "/secure/user-info",
   },
 };
 

@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   # InfluxDB for k6 metrics (full metric support)
@@ -21,7 +21,7 @@ services:
     image: grafana/grafana:latest
     container_name: k6-grafana
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
       - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
@@ -29,14 +29,13 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_USERS_ALLOW_SIGN_UP=false
-      - GF_SERVER_ROOT_URL=http://localhost:3000
+      - GF_SERVER_ROOT_URL=http://localhost:3001
       - GF_INSTALL_PLUGINS=grafana-piechart-panel
     networks:
       - k6-monitoring
     depends_on:
       - influxdb
     restart: unless-stopped
-
 
 networks:
   k6-monitoring:
