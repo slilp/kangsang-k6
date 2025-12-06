@@ -1,12 +1,7 @@
 import { check, sleep } from "k6";
 import apiInstance from "../utils/apiInstance.js";
 import { endpoints } from "../../config/config.js";
-import {
-  commonChecks,
-  randomEmail,
-  randomString,
-  parseJson,
-} from "../utils/helpers.js";
+import { commonChecks, randomEmail, randomString } from "../utils/helpers.js";
 
 export const options = {
   stages: [

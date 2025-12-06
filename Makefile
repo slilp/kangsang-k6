@@ -16,3 +16,7 @@ load-test: ## Run specific test file (usage: make load-test FILE=health-load-tes
 	@ENVIRONMENT=$(ENVIRONMENT) k6 run \
 		--out influxdb=http://localhost:8086/k6 \
 		tests/performance/$(FILE)
+
+regression-test: ## Run specific regression test file (usage: make regression-test FILE=auth.js)
+	@echo "$(BLUE)Running regression test: $(FILE)...$(NC)"
+	@ENVIRONMENT=$(ENVIRONMENT) k6 run tests/regression/$(FILE)
