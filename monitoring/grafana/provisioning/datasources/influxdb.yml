@@ -4,6 +4,7 @@ datasources:
   - name: InfluxDB-k6
     type: influxdb
     access: proxy
+    uid: InfluxDB-k6
     url: http://influxdb:8086
     database: k6
     isDefault: true
